@@ -1,74 +1,62 @@
-# dealpack.io
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-This is the base framework for the dealpack.io C2C platform.  
-You can easily build an online C2C service by adding the necessary modules provided in this base framework.
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-これはdealpack.io C2Cプラットフォームの基底フレームワークです。  
-この基底フレームワークに用意された必要なモジュールを追加することで簡単にオンラインC2Cサービスを構築することができます。
+## About Laravel
 
-## Licence
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-[MIT](https://github.com/dealpack.io/dealpack.io/blob/master/LICENCE)
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Overview
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-This base framework is built by Laravel 8.
+## Learning Laravel
 
-In addition to the basic functions installed in Laravel, such as session management, cache and i18n, the following functions are included.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-- Authentication (Customized Fortify + Jetstream + Livewire)
-- Module management (things based on laravel-modules)
-- Basic View (basic layout of frontend and admin)
-- Introduced Vue + Vuetify as a front-end framework
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-You can build an online C2C service by adding the following required modules to this base framework.  
-Each required module with only basic functionality is provided by dealpack.io, but you can customize them or replace them with your own modules to freely configure the online C2C service you want to run.
+## Laravel Sponsors
 
-- Seller identity verification module
-- Product / Offer registration module
-- Product-purchase / Offer-sales module
-- Customer Support Module
-- Troubleshooting knowledge base module
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-この基底フレームワークはLaravel 8によって構築されています。
+### Premium Partners
 
-セッション管理機能・キャッシュ機能・国際化機能などLaravelに搭載されいている基本機能以外に以下の機能が含まれます。
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[Many](https://www.many.co.uk)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[OP.GG](https://op.gg)**
 
-- 認証機能（Fortify + Jetstream + Livewireをカスタマイズしたモノ）
-- モジュール管理（laravel-modulesをベースにしたモノ）
-- 基本View（フロントエンドと管理画面の基本レイアウト）
-- フロントエンドフレームワークとしてVue + Vuetifyを導入
+## Contributing
 
-この基底フレームワークに以下の必須モジュールを追加することでオンラインC2Cサービスを構築することができます。  
-基本的な機能だけをもつ各必須モジュールはdealpack.ioによって提供されますが、それらをカスタマイズしたり、独自のモジュールに置き換えたりすることで運営したいオンラインC2Cサービスを自由に構成できます。
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-- 販売者本人確認モジュール
-- 商品／オファー登録モジュール
-- 商品購入／オファー販売モジュール
-- カスタマーサポートモジュール
-- トラブル対応ナレッジベースモジュール
+## Code of Conduct
 
-## Milestones
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-　 | Expected release date for ver. 1.0.0
---|--
- 基底フレームワーク(Base Framework) | [〜2021/3](https://github.com/dealpack-io/dealpack.io/milestone/1)
- 販売者本人確認モジュール(Seller identity verification module) | 〜2021/4
- 商品／オファー登録モジュール(Product / Offer registration module) | 〜2021/6
- 商品購入／オファー販売モジュール(Product-purchase / Offer-sales module) | 〜2021/8
- カスタマーサポートモジュール(Customer Support Module) | 〜2021/9
- トラブル対応ナレッジベースモジュール(Troubleshooting knowledge base module) | 〜2021/10
+## Security Vulnerabilities
 
-## We need your contribute!
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-We are looking for collaborators to carry out this project reliably and with high quality.  
-Until the release of ver.1.0.0, we are looking for individual developers to participate in the project as partners. If you are interested in this job, please send an email to devmaster@dealpack.io with a self-introduction.  
-After the release of ver.1.0.0, I would like to proceed with development and documentation with the GitHub Flow workflow as a normal OSS project.
+## License
 
-我々はこのプロジェクトを確実かつ、高品質に実施するために協力者を募集しています。  
-ver.1.0.0のリリースまでについてはパートナーとしてプロジェクトに参加してくれる個人開発者を募集しています。もしこの仕事に興味のある方はdevmaster@dealpack.ioまで、自己紹介を添えてメールを送ってください。  
-ver.1.0.0リリース後は通常のOSSプロジェクトとしてGitHub Flowワークフローで開発・ドキュメンテーションなどを進めたいと思っています。
-
-## Who we are?
-
-- [Keisuke Mutoh (Office ORA)](https://office-ora.com)
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
