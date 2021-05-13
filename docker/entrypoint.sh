@@ -3,23 +3,21 @@
 cd $DEALPACK_WORK_PATH
 sudo apt update
 
-if [ ! -e $DEALPACK_WORK_PATH/$DEALPACK_DIR/artisan ]; then
-    ### clone dealpack-io/dealpack.io.git
-    git clone https://github.com/dealpack-io/dealpack.io.git $DEALPACH_DIR
-
+cd $DEALPACK_DIR
+if [ ! -d ${DEALPACK_WORK_PATH}/${DEALPACK_DIR}/vendor ]; then
     ### install packages
-    cd $DEALPACK_DIR
     composer install
+fi
 
-    ### migration
-    php artisan migrate --force
+### migration
+php artisan migrate --force
 
+if [ ! -d ${DEALPACK_WORK_PATH}/${DEALPACK_DIR}/node_modules ]; then
     ### install npm packages
     npm install
 fi
 
 ### build
-cd $DEALPACK_WORK_PATH/$DEALPACK_DIR
 if [ "$APP_ENV" = "production" ]; then
     npm run prod
 elif [ "$APP_ENV" = "development" ]; then

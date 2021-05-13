@@ -28,7 +28,7 @@ RUN apt-get install -y cron unzip procps wget vim certbot
 # install php extensions for laravel8
 RUN apt-get install -y zlib1g-dev libpng-dev libicu-dev libxml2-dev libxslt-dev libzip-dev libjpeg-dev libfreetype6-dev
 
-RUN docker-php-ext-install bcmath intl pdo_mysql soap xsl xml zip
+RUN docker-php-ext-install bcmath intl pdo_mysql soap xsl zip
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
 
@@ -80,8 +80,8 @@ RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/in
 RUN source $NVM_DIR/nvm.sh && \
     nvm install ${NODE_VERSION} --latest-npm && \
     nvm use ${NODE_VERSION} && \
-    nvm alias ${NODE_VERSION} \
-    nvm install-latest-npm
+    nvm alias ${NODE_VERSION}
+
 RUN if [ ${NPM_REGISTRY} ]; then \
     npm config set registry ${NPM_REGISTRY} \
 ;fi

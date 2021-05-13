@@ -20,7 +20,7 @@ services:
     image: ${DEALPACK_IMAGE_TAG}
     container_name: ${DEALPACK_CONTAINER_NAME}
     environment:
-      APP_ENV: ${DEALPACK_MODE}
+      APP_ENV: ${APP_ENV}
       APP_NAME: ${APP_NAME}
       APP_DEBUG: ${APP_DEBUG}
       APP_URL: ${APP_URL}
