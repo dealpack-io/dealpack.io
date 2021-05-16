@@ -1,0 +1,26 @@
+[mysqld]
+default_authentication_plugin= mysql_native_password
+character_set_server = utf8mb4
+collation_server = utf8mb4_ja_0900_as_cs
+bind-address = 0.0.0.0
+
+innodb_buffer_pool_size = 48G
+#innodb_additional_mem_pool_size = 48M
+innodb_log_buffer_size = 64M
+innodb_log_file_size = 2G
+sort_buffer_size = 128M
+read_rnd_buffer_size = 128M
+join_buffer_size = 32M
+read_buffer_size = 32M
+max_allowed_packet =  256M
+
+key_buffer_size = 256M
+myisam_sort_buffer_size = 1M
+
+max_connections = 2000
+mysqlx_max_connections = 2000
+
+loose-mecab-rc-file=/etc/mecabrc
+innodb_ft_min_token_size=2
+ft_min_word_len=2
+#innodb_ft_enable_stopword = OFF

@@ -1,0 +1,12 @@
+# configuration of the server
+server {
+  listen ${NGINX_PORT};
+  server_name ${NGINX_HOSTS};
+  charset utf-8;
+
+  location / {
+    proxy_cache off;
+    proxy_set_header host $host;
+    proxy_pass http://${DEALPACK_IP};
+  }
+}

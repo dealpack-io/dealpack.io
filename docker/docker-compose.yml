@@ -1,6 +1,48 @@
 version: "3"
 
 services:
+  mysql:
+    build:
+      context: mysql/.
+      args:
+        - MYSQL_IMAGE_TAG=${MYSQL_IMAGE_TAG}
+    image: ${MYSQL_IMAGE_TAG}
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PORT: ${MYSQL_PORT}
+      TZ: 'Asia/Tokyo'
+    ports:
+      - 3306:${MYSQL_PORT}
+    volumes:
+      - ${MYSQL_VOL_DATA}:/var/lib/mysql
+      - ${MYSQL_VOL_CONF}:/etc/mysql/conf.d
+    networks:
+      default:
+        ipv4_address: ${MYSQL_IP}
+  nginx:
+    build:
+      context: nginx/.
+      args:
+        - NGINX_IMAGE_TAG=${NGINX_IMAGE_TAG}
+    image: ${NGINX_IMAGE_TAG}
+    container_name: nginx
+    ports:
+      - 80:${NGINX_PORT}
+    environment:
+      NGINX_HOSTS: ${NGINX_HOSTS}
+      NGINX_PORT: ${NGINX_PORT}
+      NGINX_WWW_PATH: ${NGINX_WWW_PATH}
+      DEALPACK_IP: ${DEALPACK_IP}
+    volumes:
+      - ${NGINX_SRC_PATH}:${NGINX_WWW_PATH}
+      - ${NGINX_CONF}:/etc/nginx/nginx.conf
+      - ${NGINX_TEMPLATE}:/tmp/dealpack.conf.template
+    command: >-
+      /bin/sh -c "envsubst '$$NGINX_PORT $$NGINX_HOSTS $$DEALPACK_IP' < /tmp/dealpack.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    networks:
+      default:
+        ipv4_address: ${NGINX_IP}
   dealpack:
     build:
       context: .
